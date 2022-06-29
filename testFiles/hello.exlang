@@ -1,0 +1,99 @@
+
+
+//Test (When running a test, need to delete other tests first to prevent duplicate values).
+//test 1 calculation
+Floor test = 3 + 5 * 6 / (5 * 2) - 6;
+test = test + 10;
+//output should 10.
+Show>>test;
+
+
+//test 2 Scanner
+Name answer;
+answer = Enter<<;
+Finish hello = answer eq "hi";
+//if input is hi, output is true.
+Show>> hello;
+
+//test 3 if_statement
+//if input hello, should output Correct.
+Name guess= "hello";
+Name answer1 = Enter<<;
+Name feedback = "Wrong answer";
+if(answer1 eq guess){
+Show>>"Correct";
+}else{
+Show>>feedback;
+};
+//all output should true.
+Floor a = 8;
+Floor b = 10;
+if(a<b){Show>>yes;};
+if(a+2*5 == b+8){Show>>yes;};
+if((a>=8) && (b==10)){Show>>yes;}else{Show>>no;};
+if((a+b>100) || (a-1==7)){Show>>yes;}else{Show>>no;};
+
+
+//test4 Loop
+Floor c = 8;
+Floor d = 2;
+Loop{ c=c+1; }Times(2);
+//loop inside loop inside loop
+Loop{
+   Loop{
+     Loop{
+          d=d+1;
+     }Times(2);
+   }Times(2);
+}Times(2);
+//output should all 10
+Show>>c;
+Show>>d;
+
+
+//test 5 Method
+#Construct power<Floor a,Floor b>{
+Floor result=1;
+Loop{result = result * a;}Times(8);
+//result output should 256
+Show>>result;
+Floor uu = 5;
+}return(uu>=5);
+//output should true
+if(power(2,8)==yes){Show>>yes;}else{Show>>"wrong!";};
+
+
+//test 6 Scope
+//Scope test
+Floor e = 8;
+
+if(e>=8){Floor bb = 10; e=e+1;};
+if(e==9){Floor cc = 10; e=e+1;};
+Loop{Floor dd = 10;e=e+1;}Times(3);
+//should output 13.
+Show>>e;
+
+//should show error(Undefined variable: bb/cc/dd)
+//Show>>bb;
+//Show>>cc;
+//Show>>dd;
+
+//method scope.
+#Construct power<Floor aa>{
+//should show error(Undefined variable: e)
+//Show>>e;
+Floor f = 8;
+if("a" eq "a"){
+//should output 8.
+Show>>f;
+};
+}return(yes);
+
+//should show error(Undefined variable: f)
+//Show>>f;
+
+Finish g = power(8);
+
+
+
+
